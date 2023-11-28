@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+
+    <!-- tailwind & daisy ui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.7/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-5xl font-bold text-center mt-2">Phone Hunter</h1>
+    </header>
+
+
+    <!-- main -->
+    <main class="container my-8 mx-auto">
+        <!-- search -->
+        <section class="mb-6 bg-gray-700 rounded-lg p-3 mx-2">
+            <input id="search-field" type="text" placeholder="Search here"
+                class="input input-bordered w-60 md:w-full  lg:w-full max-w-xs border-teal-500 " />
+            <button onclick=" search()"
+                class="btn border-none hover:bg-teal-600  bg-teal-500 text-zinc-100 mx-2">Search</button>
+        </section>
+
+        <!-- loading -->
+        <section>
+            <div id="loading" class="text-center mt-80 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+            </div>
+        </section>
+
+
+        <!-- phones -->
+        <section>
+            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-2 ">
+
+            </div>
+
+        </section>
+
+        <!-- show all button -->
+        <div id="show-all" class="hidden mt-4  text-center  ">
+            <button onclick="showAll()" class="btn btn-active hover:bg-indigo-700 bg-indigo-600 ">Show All</button>
+        </div>
+
+        <!-- show details -->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+
+            <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle  ">
+                <div class="modal-box w-80 mx-auto md:w-96 lg:w-96 overflow-hidden  ">
+
+                    <div id="all">
+
+                    </div>
+
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn -my-12">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+
+    </main>
+    <!-- main -->
+
+
+
+    <footer>
+
+    </footer>
+
+    <script src="js/phone.js"></script>
+</body>
+
+</html>
